@@ -26,7 +26,7 @@ interface ConfigInput {
 
 const DEFAULT_WEB_HOST = "localhost";
 const DEFAULT_WEB_PORT = 3000;
-const DEFAULT_SERVER_URL = "http://localhost:4096";
+const DEFAULT_SERVER_URL = "http://localhost:4097";
 
 const isDev = () =>
   typeof process !== "undefined" &&
@@ -161,8 +161,8 @@ function resolveServerUrlFromEnv(): string {
   const importMetaEnv =
     typeof import.meta !== "undefined"
       ? ((import.meta as ImportMeta & {
-          env?: Record<string, string | undefined>;
-        }).env ?? undefined)
+        env?: Record<string, string | undefined>;
+      }).env ?? undefined)
       : undefined;
   const globalRuntimeUrl = (
     globalThis as typeof globalThis & { __OPENCODE_SERVER_URL__?: string }
